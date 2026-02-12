@@ -116,6 +116,26 @@ For further customization and setup guidance, click the button below:
 
 ---
 
+
+### Deploy Pair-Code Website on Vercel (Recommended)
+
+This repo now includes Vercel serverless routes for stable pair-code website hosting:
+
+- `/` → pairing website
+- `/api/pair-code?number=...` → JSON API
+- `/health` → health check
+
+Steps:
+
+1. Import this repo into Vercel
+2. Set environment variable:
+   - `PAIRCODE_API_URL` (optional, default: `https://knight-bot-paircode.onrender.com`)
+   - `PAIRCODE_TIMEOUT_MS` (optional, default: `10000`)
+   - `PAIRCODE_RETRIES` (optional, default: `2`)
+3. Deploy
+
+For better uptime, keep retries enabled and avoid very low timeouts.
+
 ## ⚙️ Features
 
 - **Tag all group members** with the `.tagall` command
