@@ -55,7 +55,7 @@
         try {
           data = JSON.parse(raw);
         } catch {
-          throw new Error(`Pair API returned non-JSON response (${res.status}). ${raw.slice(0, 120)}`);
+          throw new Error('Pair service is temporarily unavailable. Please try again in a moment.');
         }
 
         if (!res.ok || !data.ok) {

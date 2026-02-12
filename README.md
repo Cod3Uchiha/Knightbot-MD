@@ -129,7 +129,7 @@ Steps:
 
 1. Import this repo into Vercel
 2. Set environment variable:
-   - `PAIRCODE_SOURCE` (optional, default: `baileys`) → uses the same Baileys `requestPairingCode` flow from the bot files
+   - `PAIRCODE_SOURCE` (optional): `baileys` or `provider`. Default is `baileys` locally, and `provider` on Vercel for better serverless stability.
    - `PAIRCODE_API_URL` (optional): provider base URL **or** full URL. Examples:
      - `https://your-provider.tld` (auto-uses `/code?number=...`)
      - `https://your-provider.tld/code?number={number}`
