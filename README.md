@@ -129,7 +129,10 @@ Steps:
 
 1. Import this repo into Vercel
 2. Set environment variable:
-   - `PAIRCODE_API_URL` (optional, default: `https://knight-bot-paircode.onrender.com`)
+   - `PAIRCODE_API_URL` (optional): provider base URL **or** full URL. Examples:
+     - `https://your-provider.tld` (auto-uses `/code?number=...`)
+     - `https://your-provider.tld/code?number={number}`
+   - `PAIRCODE_API_ENDPOINT` (optional): explicit endpoint template like `https://your-provider.tld/code?number={number}`
    - `PAIRCODE_TIMEOUT_MS` (optional, default: `10000`)
    - `PAIRCODE_RETRIES` (optional, default: `2`)
 3. Deploy
