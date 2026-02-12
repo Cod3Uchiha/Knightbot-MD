@@ -129,12 +129,14 @@ Steps:
 
 1. Import this repo into Vercel
 2. Set environment variable:
+   - `PAIRCODE_SOURCE` (optional, default: `baileys`) → uses the same Baileys `requestPairingCode` flow from the bot files
    - `PAIRCODE_API_URL` (optional): provider base URL **or** full URL. Examples:
      - `https://your-provider.tld` (auto-uses `/code?number=...`)
      - `https://your-provider.tld/code?number={number}`
    - `PAIRCODE_API_ENDPOINT` (optional): explicit endpoint template like `https://your-provider.tld/code?number={number}`
    - `PAIRCODE_TIMEOUT_MS` (optional, default: `10000`)
    - `PAIRCODE_RETRIES` (optional, default: `2`)
+   - `BAILEYS_PAIR_TIMEOUT_MS` (optional, default: `45000`)
 3. Deploy
 
 For better uptime, keep retries enabled and avoid very low timeouts.
