@@ -7,8 +7,6 @@
     }
   },
   "rewrites": [
-    { "source": "/", "destination": "/api/index" },
-    { "source": "/api/pair-code", "destination": "/api/pair-code" },
     { "source": "/health", "destination": "/api/health" }
   ]
 }

@@ -119,9 +119,9 @@ For further customization and setup guidance, click the button below:
 
 ### Deploy Pair-Code Website on Vercel (Recommended)
 
-This repo now includes Vercel serverless routes for stable pair-code website hosting:
+This repo now includes a static root page + Vercel serverless routes for stable pair-code hosting:
 
-- `/` → pairing website
+- `/` → pairing website (`index.html`)
 - `/api/pair-code?number=...` → JSON API
 - `/health` → health check
 
