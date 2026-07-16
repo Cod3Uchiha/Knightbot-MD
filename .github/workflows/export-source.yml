@@ -26,3 +26,5 @@ jobs:
           path: knightbot-source.zip
           if-no-files-found: error
           retention-days: 1
+
+# Trigger export after the workflow exists on the base branch.
