@@ -116,6 +116,31 @@ For further customization and setup guidance, click the button below:
 
 ---
 
+
+### Deploy Pair-Code Website on Vercel (Recommended)
+
+This repo now includes a static root page + Vercel serverless routes for stable pair-code hosting:
+
+- `/` → pairing website (`index.html`)
+- `/api/pair-code?number=...` → JSON API
+- `/health` → health check
+
+Steps:
+
+1. Import this repo into Vercel
+2. Set environment variable:
+   - `PAIRCODE_SOURCE` (optional): `baileys` or `provider`. Default is `baileys` locally, and `provider` on Vercel for better serverless stability.
+   - `PAIRCODE_API_URL` (optional): provider base URL **or** full URL. Examples:
+     - `https://your-provider.tld` (auto-uses `/code?number=...`)
+     - `https://your-provider.tld/code?number={number}`
+   - `PAIRCODE_API_ENDPOINT` (optional): explicit endpoint template like `https://your-provider.tld/code?number={number}`
+   - `PAIRCODE_TIMEOUT_MS` (optional, default: `10000`)
+   - `PAIRCODE_RETRIES` (optional, default: `2`)
+   - `BAILEYS_PAIR_TIMEOUT_MS` (optional, default: `45000`)
+3. Deploy
+
+For better uptime, keep retries enabled and avoid very low timeouts.
+
 ## ⚙️ Features
 
 - **Tag all group members** with the `.tagall` command
@@ -164,9 +189,21 @@ It is lightweight and can be easily customized to add more commands as per your 
     node index.js
     ```
 
-4. **Scan the QR code:**
+   This now also starts a built-in pairing website on port `3000` (or `PORT` / `WEB_PORT` from env).
 
-    Once the bot starts, a QR code will appear in the terminal. Scan this QR code using the Linked Devices feature in WhatsApp to connect your WhatsApp account with the bot.
+4. **Open the website and generate your pair code:**
+
+   Visit:
+
+   ```
+   http://localhost:3000
+   ```
+
+   Enter your WhatsApp number (country code + number, no `+`) and copy the pair code shown.
+
+5. **Connect using the pair code (or QR):**
+
+    In WhatsApp open **Settings → Linked Devices → Link a Device → Link with phone number instead**, then enter the generated code. QR login in terminal is still available.
 
 ---
 
